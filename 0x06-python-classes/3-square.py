@@ -1,30 +1,37 @@
 #!/usr/bin/python3
-"""Class Square"""
+"""
+Module 3-square
+Defines class Square with private attribute size and public attribute area
+"""
 
 
 class Square:
-    """Class Square"""
+    """
+    class Square definition
+    Args:
+        size (int): size of a side in square
+    Functions:
+        __init__(self, size)
+        area(self)
+    """
+
     def __init__(self, size=0):
-        """[summary]
-        
-        Keyword Arguments:
-            size {int} -- size of square(default: {0})
-        
-        Raises:
-            ValueError: must be > 0
-            TypeError: must be an int
         """
-        if (size < 0):
-            raise ValueError("size must be >= 0")
-        elif not isinstance(size, int):
+        Initializes square
+        Attributes:
+            __size (int): size of a side of square, defaults to 0 if none
+        """
+        if type(size) is not int:
             raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
         else:
             self.__size = size
 
     def area(self):
-        """area
-        
-        Returns:
-            [int] -- area of square
         """
-        return self.__size * self.__size
+        Calculates area of square
+        Returns:
+            area
+        """
+        return (self.__size)**2
